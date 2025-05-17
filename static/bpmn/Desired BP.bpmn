@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1drfblq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.1.1">
+  <bpmn:process id="Process_077xhm7" isExecutable="false">
+    <bpmn:startEvent id="Event_0wq2w0b">
+      <bpmn:outgoing>Flow_1y6cxf3</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_0iyippz" name="Create UBL Invoice">
+      <bpmn:incoming>Flow_1y6cxf3</bpmn:incoming>
+      <bpmn:outgoing>Flow_0vbqlg8</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_167zyab" name="Validate for Australian Rules">
+      <bpmn:incoming>Flow_0vbqlg8</bpmn:incoming>
+      <bpmn:outgoing>Flow_15cdgvc</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sendTask id="Activity_1iihvt1" name="Send via PEPPOL">
+      <bpmn:incoming>Flow_15cdgvc</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wqppnz</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:endEvent id="Event_0ki2nnk">
+      <bpmn:incoming>Flow_0wqppnz</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1y6cxf3" name="PDF" sourceRef="Event_0wq2w0b" targetRef="Activity_0iyippz" />
+    <bpmn:sequenceFlow id="Flow_0vbqlg8" name="XML_UBL" sourceRef="Activity_0iyippz" targetRef="Activity_167zyab" />
+    <bpmn:sequenceFlow id="Flow_15cdgvc" name="XML_UBL" sourceRef="Activity_167zyab" targetRef="Activity_1iihvt1" />
+    <bpmn:sequenceFlow id="Flow_0wqppnz" name="PEPPOL" sourceRef="Activity_1iihvt1" targetRef="Event_0ki2nnk" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_077xhm7">
+      <bpmndi:BPMNShape id="Event_0wq2w0b_di" bpmnElement="Event_0wq2w0b">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0392bkv_di" bpmnElement="Activity_0iyippz">
+        <dc:Bounds x="250" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0zuogos_di" bpmnElement="Activity_167zyab">
+        <dc:Bounds x="420" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0wxirix_di" bpmnElement="Activity_1iihvt1">
+        <dc:Bounds x="590" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ki2nnk_di" bpmnElement="Event_0ki2nnk">
+        <dc:Bounds x="762" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1y6cxf3_di" bpmnElement="Flow_1y6cxf3">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="250" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="208" y="102" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0vbqlg8_di" bpmnElement="Flow_0vbqlg8">
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="420" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="360" y="102" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15cdgvc_di" bpmnElement="Flow_15cdgvc">
+        <di:waypoint x="520" y="120" />
+        <di:waypoint x="590" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="530" y="102" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wqppnz_di" bpmnElement="Flow_0wqppnz">
+        <di:waypoint x="690" y="120" />
+        <di:waypoint x="762" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="704" y="102" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
