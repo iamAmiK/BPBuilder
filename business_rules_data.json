@@ -1,0 +1,16 @@
+[
+        {"Type": "AUNZ_PEPPOL_1_0_10", "API": "ESSValidator"},
+        {"Type": "AUNZ_PEPPOL_SB_1_0_10", "API": "ESSValidator"},
+        {"Type": "AUNZ_UBL_1_0_10", "API": "ESSValidator"},
+        {"Type": "FR_EN16931_CII_1_3_14", "API": "ESSValidator"},
+        {"Type": "FR_EN16931_UBL_1_3_14", "API": "ESSValidator"},
+        {"Type": "RO_RO16931_UBL_1_0_8_EN16931", "API": "ESSValidator"},
+        {"Type": "RO_RO16931_UBL_1_0_8_CIUS_RO", "API": "ESSValidator"},
+        {"Type": "EN_16931_CII", "API": "ECOSIO"},
+        {"Type": "EHF", "API": "ECOSIO"},
+        {"Type": "EN_16931_UBL Credit Note", "API": "ECOSIO"},
+        {"Type": "A-NZ_PEPPOL_BIS3", "API": "ECOSIO"},
+        {"Type": "OpenPEPPOL formats", "API": "ECOSIO"},
+        {"Type": "CII Cross Industry formats", "API": "ECOSIO"},
+        {"Type": "OIOUBL", "API": "ECOSIO"}
+]
